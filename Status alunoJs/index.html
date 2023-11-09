@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        
+        var nome = window.prompt("qual o nome do aluno?");
+        var nota = window.prompt("Qual a nota?");
+        var curso = window.prompt("Qual o curso do mesmo?")
+        while(nome == ''){
+            alert("Nome inválido!")
+            var nome = window.prompt("qual o nome do aluno?");
+        }
+        while(nota == ''){
+            alert("Nota inválida!")
+            var nota = window.prompt("Insira a nota novamente");
+        }
+        while(nota>=101){
+            alert("Nota inválida!")
+            var nota = window.prompt("Qual a nota?");
+        }
+        if(nota <= 40 ){
+            var status = 'Reprovado'
+            document.write(`<div class="resultado"><p class="formline">Nome: ${nome}</p><hr> <br> Escola: SENAI CTTI</p> <hr> <br> <p class="formline">Nota: ${nota}</p> <hr> <br> Status: ${status}</p> <hr></div> `)
+        }
+        else if(nota>=40 && nota < 60){
+            var status = 'Recuperação'
+            document.write(`<div class="resultado"><p class="formline">Nome: ${nome}<hr> <br> Escola: SENAI CTTI</p> <hr> <br>
+            <p class="formline">Nota: ${nota} <hr> <br> Status: ${status}</p> <hr> <br> Curso: ${curso} </div> `)
+        }
+        else{
+            var status = 'Aprovado'
+            document.write(`<p class="formline">Nome: ${nome}<hr> <br> Escola: SENAI CTTI</p> <hr> <br><p class="formline">Nota: ${nota} <hr> <br> Status: ${status}</p> <hr> </    div>`)
+        }
+        function imprimir(){
+            print("imprimir boletim")
+        }
+    </script>
+    <button style="position:relative; margin-top: 10px;width: 10%; left: 45%;" onclick="imprimir()" type="button">Imprimir boletim</button>
+</body>
+</html>
